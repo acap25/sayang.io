@@ -10,8 +10,8 @@
             background-color: #ffe6e6;
             text-align: center;
             padding: 50px;
-            overflow: hidden;
             transition: background-color 1s ease;
+            min-height: 100vh;
         }
         #mainContent, #thankYouContent, #questionContent {
             opacity: 1;
@@ -46,14 +46,14 @@
         }
         .mochi-gif {
             margin: 20px auto;
-            max-width: 300px; /* Adjust as necessary */
+            max-width: 300px;
             border-radius: 10px;
             opacity: 0;
             animation: fadeIn 3s ease-in-out forwards 2s;
         }
         .thank-you-gif {
             margin: 20px auto;
-            max-width: 300px; /* Adjust as necessary */
+            max-width: 300px;
             border-radius: 10px;
             opacity: 0;
             animation: fadeIn 3s ease-in-out forwards 2s;
@@ -116,7 +116,7 @@
     </div>
 
     <div id="questionContent">
-        <h1>Sebagai Tanda Minta Maaf Jawab sikit soalan ni  😊</h1>
+        <h1>Sebagai Tanda Minta Maaf Jawab sikit soalan ni 😊</h1>
         <img src="https://media1.tenor.com/m/lHruxikuM1YAAAAC/mochi-cat-eating.gif" alt="Mochi Cat Eating" class="mochi-gif">
         <p>Sayang shift apa besok 🥰?</p>
         <input type="text" id="workShift" placeholder="Enter your shift (e.g., Morning, Afternoon, Evening)"><br><br>
@@ -137,9 +137,9 @@
     </div>
 
     <script>
-        const formURL = "https://docs.google.com/forms/d/e/1FAIpQLSdYyrnKDWeVyk1aQV18N9NkzrycizPk5RhrJI_TykqOJZtsqw/formResponse"; // Form response URL
-        const entryWorkShift = "entry.1179674732"; // Entry ID for work shift
-        const entryFood = "entry.1960816328"; // Entry ID for food
+        const formURL = "https://docs.google.com/forms/d/e/1FAIpQLSdYyrnKDWeVyk1aQV18N9NkzrycizPk5RhrJI_TykqOJZtsqw/formResponse";
+        const entryWorkShift = "entry.1179674732";
+        const entryFood = "entry.1960816328";
 
         function showQuestions() {
             alert("Yeah! Makasih sayangku 🥰 I promise to make it up to you!");
@@ -155,17 +155,14 @@
             const workShift = document.getElementById('workShift').value;
             const food = document.getElementById('food').value;
 
-            // Debugging: Log the values to the console
             console.log("Work Shift:", workShift);
             console.log("Food Preference:", food);
 
-            // Check if inputs are filled
             if (!workShift || !food) {
                 alert("Please fill in both fields before submitting.");
                 return;
             }
 
-            // Send data to Google Forms
             const data = new FormData();
             data.append(entryWorkShift, workShift);
             data.append(entryFood, food);
